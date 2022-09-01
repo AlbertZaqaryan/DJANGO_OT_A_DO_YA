@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for i in category %}
+        {% for j in i.Item_Category.all %}
+            <a href="{% url 'home_detail_detail' j.id %}"><Button>{{ j.name }}</Button></a>
+        {% endfor %}
+    {% endfor %}
+    
+{% endblock %}

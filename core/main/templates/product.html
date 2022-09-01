@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for i in product %}
+        {% for j in i.Mark_Product.all %}
+            <h3>{{ j.name }}</h3>
+            <img src="{{ j.img.url }}" width="300px" alt="">
+            <p>{{ j.about }}</p>
+            <h5>{{ j.price }}</h5>
+            <a href="{% url 'about' j.id %}"><Button>About</Button></a>
+
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}

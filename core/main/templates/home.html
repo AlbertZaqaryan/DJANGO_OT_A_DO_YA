@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for i in itemtype %}
+        <a href="{% url 'home_detail' i.id %}"><Button>{{ i.name }}</Button></a>
+        <img src="{{ i.img.url }}" width="100px" alt="">
+    {% endfor %} 
+{% endblock %}
